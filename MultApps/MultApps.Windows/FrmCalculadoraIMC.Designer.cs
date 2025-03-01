@@ -30,9 +30,10 @@
         {
             this.lblInformaçao = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblIdade = new System.Windows.Forms.Label();
             this.chkMulher = new System.Windows.Forms.CheckBox();
             this.chkHomem = new System.Windows.Forms.CheckBox();
-            this.lblInformaçao2 = new System.Windows.Forms.Label();
+            this.lblISexo = new System.Windows.Forms.Label();
             this.chkCriança = new System.Windows.Forms.CheckBox();
             this.chkAdulto = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
@@ -51,9 +52,10 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.lblIdade);
             this.panel1.Controls.Add(this.chkMulher);
             this.panel1.Controls.Add(this.chkHomem);
-            this.panel1.Controls.Add(this.lblInformaçao2);
+            this.panel1.Controls.Add(this.lblISexo);
             this.panel1.Controls.Add(this.chkCriança);
             this.panel1.Controls.Add(this.chkAdulto);
             this.panel1.Controls.Add(this.lblInformaçao);
@@ -62,6 +64,17 @@
             this.panel1.Size = new System.Drawing.Size(776, 426);
             this.panel1.TabIndex = 1;
             // 
+            // lblIdade
+            // 
+            this.lblIdade.AutoSize = true;
+            this.lblIdade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIdade.ForeColor = System.Drawing.Color.Gray;
+            this.lblIdade.Location = new System.Drawing.Point(42, 107);
+            this.lblIdade.Name = "lblIdade";
+            this.lblIdade.Size = new System.Drawing.Size(140, 20);
+            this.lblIdade.TabIndex = 6;
+            this.lblIdade.Text = "Acima de 19 anos.";
+            // 
             // chkMulher
             // 
             this.chkMulher.AutoSize = true;
@@ -69,9 +82,9 @@
             this.chkMulher.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.chkMulher.Location = new System.Drawing.Point(483, 66);
             this.chkMulher.Name = "chkMulher";
-            this.chkMulher.Size = new System.Drawing.Size(82, 24);
+            this.chkMulher.Size = new System.Drawing.Size(107, 24);
             this.chkMulher.TabIndex = 5;
-            this.chkMulher.Text = "Mulher";
+            this.chkMulher.Text = "Femenino";
             this.chkMulher.UseVisualStyleBackColor = true;
             // 
             // chkHomem
@@ -83,20 +96,20 @@
             this.chkHomem.ForeColor = System.Drawing.Color.Orange;
             this.chkHomem.Location = new System.Drawing.Point(359, 66);
             this.chkHomem.Name = "chkHomem";
-            this.chkHomem.Size = new System.Drawing.Size(89, 24);
+            this.chkHomem.Size = new System.Drawing.Size(108, 24);
             this.chkHomem.TabIndex = 4;
-            this.chkHomem.Text = "Homem";
+            this.chkHomem.Text = "Masculino";
             this.chkHomem.UseVisualStyleBackColor = true;
             // 
-            // lblInformaçao2
+            // lblISexo
             // 
-            this.lblInformaçao2.AutoSize = true;
-            this.lblInformaçao2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInformaçao2.Location = new System.Drawing.Point(355, 23);
-            this.lblInformaçao2.Name = "lblInformaçao2";
-            this.lblInformaçao2.Size = new System.Drawing.Size(64, 24);
-            this.lblInformaçao2.TabIndex = 3;
-            this.lblInformaçao2.Text = "Sexo:";
+            this.lblISexo.AutoSize = true;
+            this.lblISexo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblISexo.Location = new System.Drawing.Point(355, 23);
+            this.lblISexo.Name = "lblISexo";
+            this.lblISexo.Size = new System.Drawing.Size(64, 24);
+            this.lblISexo.TabIndex = 3;
+            this.lblISexo.Text = "Sexo:";
             // 
             // chkCriança
             // 
@@ -109,7 +122,7 @@
             this.chkCriança.TabIndex = 2;
             this.chkCriança.Text = "Criança";
             this.chkCriança.UseVisualStyleBackColor = true;
-            this.chkCriança.CheckedChanged += new System.EventHandler(this.chkCriança_CheckedChanged);
+            this.chkCriança.Click += new System.EventHandler(this.chkCriança_CheckedChanged);
             // 
             // chkAdulto
             // 
@@ -124,7 +137,7 @@
             this.chkAdulto.TabIndex = 1;
             this.chkAdulto.Text = "Adulto";
             this.chkAdulto.UseVisualStyleBackColor = true;
-            this.chkAdulto.CheckedChanged += new System.EventHandler(this.chkAdulto_CheckedChanged);
+            this.chkAdulto.Click += new System.EventHandler(this.chkAdulto_CheckedChanged);
             // 
             // FrmCalculadoraIMC
             // 
@@ -146,9 +159,10 @@
         private System.Windows.Forms.Label lblInformaçao;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.CheckBox chkAdulto;
-        private System.Windows.Forms.Label lblInformaçao2;
+        private System.Windows.Forms.Label lblISexo;
         private System.Windows.Forms.CheckBox chkCriança;
         private System.Windows.Forms.CheckBox chkMulher;
         private System.Windows.Forms.CheckBox chkHomem;
+        private System.Windows.Forms.Label lblIdade;
     }
 }

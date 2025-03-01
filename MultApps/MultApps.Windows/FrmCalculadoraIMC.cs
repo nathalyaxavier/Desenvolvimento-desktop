@@ -21,15 +21,21 @@ namespace MultApps.Windows
         {
             chkCriança.ForeColor = Color.DarkOrange;
             chkAdulto.ForeColor = Color.Gray;
+            chkCriança.Checked = true;
             chkAdulto.Checked = false;
+            lblIdade.Text = "Abaixo de 19 anos";
         }
 
         private void chkAdulto_CheckedChanged(object sender, EventArgs e)
         {
             chkAdulto.ForeColor = Color.DarkOrange;
             chkCriança.ForeColor = Color.Gray;
+            chkAdulto.Checked = true;
             chkCriança.Checked = false;
-
+            lblIdade.Text = "Acima de 19 anos";
+            
         }
+
+      
     }
 }
