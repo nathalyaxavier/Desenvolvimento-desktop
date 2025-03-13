@@ -30,6 +30,8 @@
         {
             this.lblInformaçao = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblResultado = new System.Windows.Forms.Label();
+            this.btnCalcular = new System.Windows.Forms.Button();
             this.panelAdulto = new System.Windows.Forms.Panel();
             this.txtAltura = new System.Windows.Forms.TextBox();
             this.txtPeso = new System.Windows.Forms.TextBox();
@@ -43,10 +45,10 @@
             this.lblISexo = new System.Windows.Forms.Label();
             this.chkCriança = new System.Windows.Forms.CheckBox();
             this.chkAdulto = new System.Windows.Forms.CheckBox();
-            this.btnCalcular = new System.Windows.Forms.Button();
-            this.lblResultado = new System.Windows.Forms.Label();
+            this.picBoxImc = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panelAdulto.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxImc)).BeginInit();
             this.SuspendLayout();
             // 
             // lblInformaçao
@@ -62,6 +64,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.picBoxImc);
             this.panel1.Controls.Add(this.lblResultado);
             this.panel1.Controls.Add(this.btnCalcular);
             this.panel1.Controls.Add(this.panelAdulto);
@@ -77,6 +80,29 @@
             this.panel1.Size = new System.Drawing.Size(776, 426);
             this.panel1.TabIndex = 1;
             // 
+            // lblResultado
+            // 
+            this.lblResultado.AutoSize = true;
+            this.lblResultado.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResultado.ForeColor = System.Drawing.Color.Red;
+            this.lblResultado.Location = new System.Drawing.Point(149, 269);
+            this.lblResultado.Name = "lblResultado";
+            this.lblResultado.Size = new System.Drawing.Size(75, 18);
+            this.lblResultado.TabIndex = 9;
+            this.lblResultado.Text = "Resultado";
+            // 
+            // btnCalcular
+            // 
+            this.btnCalcular.BackColor = System.Drawing.Color.Red;
+            this.btnCalcular.ForeColor = System.Drawing.Color.White;
+            this.btnCalcular.Location = new System.Drawing.Point(6, 243);
+            this.btnCalcular.Name = "btnCalcular";
+            this.btnCalcular.Size = new System.Drawing.Size(127, 44);
+            this.btnCalcular.TabIndex = 8;
+            this.btnCalcular.Text = "Calcular";
+            this.btnCalcular.UseVisualStyleBackColor = false;
+            this.btnCalcular.Click += new System.EventHandler(this.btnCalcular_Click);
+            // 
             // panelAdulto
             // 
             this.panelAdulto.Controls.Add(this.txtAltura);
@@ -87,7 +113,7 @@
             this.panelAdulto.Controls.Add(this.lblPeso);
             this.panelAdulto.Location = new System.Drawing.Point(3, 143);
             this.panelAdulto.Name = "panelAdulto";
-            this.panelAdulto.Size = new System.Drawing.Size(757, 84);
+            this.panelAdulto.Size = new System.Drawing.Size(403, 84);
             this.panelAdulto.TabIndex = 7;
             // 
             // txtAltura
@@ -238,28 +264,13 @@
             this.chkAdulto.UseVisualStyleBackColor = true;
             this.chkAdulto.Click += new System.EventHandler(this.chkAdulto_CheckendChanged);
             // 
-            // btnCalcular
+            // picBoxImc
             // 
-            this.btnCalcular.BackColor = System.Drawing.Color.Red;
-            this.btnCalcular.ForeColor = System.Drawing.Color.White;
-            this.btnCalcular.Location = new System.Drawing.Point(6, 243);
-            this.btnCalcular.Name = "btnCalcular";
-            this.btnCalcular.Size = new System.Drawing.Size(127, 44);
-            this.btnCalcular.TabIndex = 8;
-            this.btnCalcular.Text = "Calcular";
-            this.btnCalcular.UseVisualStyleBackColor = false;
-            this.btnCalcular.Click += new System.EventHandler(this.btnCalcular_Click);
-            // 
-            // lblResultado
-            // 
-            this.lblResultado.AutoSize = true;
-            this.lblResultado.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResultado.ForeColor = System.Drawing.Color.Red;
-            this.lblResultado.Location = new System.Drawing.Point(150, 255);
-            this.lblResultado.Name = "lblResultado";
-            this.lblResultado.Size = new System.Drawing.Size(75, 18);
-            this.lblResultado.TabIndex = 9;
-            this.lblResultado.Text = "Resultado";
+            this.picBoxImc.Location = new System.Drawing.Point(515, 133);
+            this.picBoxImc.Name = "picBoxImc";
+            this.picBoxImc.Size = new System.Drawing.Size(186, 260);
+            this.picBoxImc.TabIndex = 10;
+            this.picBoxImc.TabStop = false;
             // 
             // FrmCalculadoraIMC
             // 
@@ -274,6 +285,7 @@
             this.panel1.PerformLayout();
             this.panelAdulto.ResumeLayout(false);
             this.panelAdulto.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxImc)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -297,5 +309,6 @@
         private System.Windows.Forms.ComboBox cmbIdade;
         private System.Windows.Forms.Button btnCalcular;
         private System.Windows.Forms.Label lblResultado;
+        private System.Windows.Forms.PictureBox picBoxImc;
     }
 }
