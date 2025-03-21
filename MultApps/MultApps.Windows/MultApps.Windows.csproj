@@ -102,6 +102,9 @@
     <EmbeddedResource Include="FrmCalculadoraIMC.resx">
       <DependentUpon>FrmCalculadoraIMC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LojaAcai.resx">
+      <DependentUpon>LojaAcai.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
     </EmbeddedResource>
