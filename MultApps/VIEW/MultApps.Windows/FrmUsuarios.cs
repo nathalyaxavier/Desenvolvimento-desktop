@@ -24,45 +24,6 @@ namespace MultApps.Windows
             AtualizarGrid();
         }
 
-        private void btnCadastra_Click(object sender, EventArgs e)
-        {
-            var usuario = new Usuario
-            {
-                NomeCompleto = txtNomeCompleto.Text,
-                CPF = mtxCPF.Text,
-                Email = txtEmail.Text,
-                Senha = txtSenha.Text, // Você deve aplicar criptografia aqui
-                DataCadastro = DateTime.Now,
-                StatusAtivo = checkBoxStatus.Checked
-            };
 
-            listaUsuarios.Add(usuario);
-            AtualizarGrid();
-        }
-
-        private void btnAlterar_Click(object sender, EventArgs e)
-        {
-            if (listBoxUsuarios.SelectedIndex >= 0)
-            {
-                var indice = listBoxUsuarios.SelectedIndex;
-                var usuario = listaUsuarios[indice];
-
-                usuario.NomeCompleto = txtNomeCompleto.Text;
-                usuario.CPF = mtxCPF.Text;
-                usuario.Email = txtEmail.Text;
-                usuario.StatusAtivo = checkBoxStatus.Checked;
-
-                AtualizarLista()
-        }
-    }
-
-        private void btnExcluir_Click(object sender, EventArgs e)
-        {
-            if (listBoxUsuarios.SelectedIndex >= 0)
-            {
-                var indice = listBoxUsuarios.SelectedIndex;
-                listaUsuarios.RemoveAt(indice);
-                AtualizarLista();
-            }
         }
     }
