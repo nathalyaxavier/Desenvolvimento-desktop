@@ -47,6 +47,9 @@
             this.btnCadastra = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtNomeCompleto
@@ -59,6 +62,7 @@
             // mtxCPF
             // 
             this.mtxCPF.Location = new System.Drawing.Point(212, 113);
+            this.mtxCPF.Mask = "999,999,999-99";
             this.mtxCPF.Name = "mtxCPF";
             this.mtxCPF.Size = new System.Drawing.Size(100, 20);
             this.mtxCPF.TabIndex = 1;
@@ -80,6 +84,7 @@
             // 
             // txtDataCadastro
             // 
+            this.txtDataCadastro.Enabled = false;
             this.txtDataCadastro.Location = new System.Drawing.Point(35, 199);
             this.txtDataCadastro.Name = "txtDataCadastro";
             this.txtDataCadastro.Size = new System.Drawing.Size(129, 20);
@@ -137,6 +142,7 @@
             // 
             // txtDataUltimoAcesso
             // 
+            this.txtDataUltimoAcesso.Enabled = false;
             this.txtDataUltimoAcesso.Location = new System.Drawing.Point(212, 200);
             this.txtDataUltimoAcesso.Name = "txtDataUltimoAcesso";
             this.txtDataUltimoAcesso.Size = new System.Drawing.Size(125, 20);
@@ -155,9 +161,6 @@
             // cmbStatus
             // 
             this.cmbStatus.FormattingEnabled = true;
-            this.cmbStatus.Items.AddRange(new object[] {
-            "Ativo",
-            "Inativo"});
             this.cmbStatus.Location = new System.Drawing.Point(407, 199);
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(132, 21);
@@ -176,11 +179,7 @@
             // cmbFiltrar
             // 
             this.cmbFiltrar.FormattingEnabled = true;
-            this.cmbFiltrar.Items.AddRange(new object[] {
-            "Todos ",
-            "Ativos ",
-            "Inativos"});
-            this.cmbFiltrar.Location = new System.Drawing.Point(32, 289);
+            this.cmbFiltrar.Location = new System.Drawing.Point(35, 266);
             this.cmbFiltrar.Name = "cmbFiltrar";
             this.cmbFiltrar.Size = new System.Drawing.Size(159, 21);
             this.cmbFiltrar.TabIndex = 14;
@@ -189,7 +188,7 @@
             // 
             this.lblFiltrar.AutoSize = true;
             this.lblFiltrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFiltrar.Location = new System.Drawing.Point(29, 253);
+            this.lblFiltrar.Location = new System.Drawing.Point(12, 237);
             this.lblFiltrar.Name = "lblFiltrar";
             this.lblFiltrar.Size = new System.Drawing.Size(47, 16);
             this.lblFiltrar.TabIndex = 15;
@@ -200,7 +199,7 @@
             this.btnCadastra.BackColor = System.Drawing.Color.Lime;
             this.btnCadastra.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastra.ForeColor = System.Drawing.Color.Black;
-            this.btnCadastra.Location = new System.Drawing.Point(284, 281);
+            this.btnCadastra.Location = new System.Drawing.Point(292, 253);
             this.btnCadastra.Name = "btnCadastra";
             this.btnCadastra.Size = new System.Drawing.Size(85, 42);
             this.btnCadastra.TabIndex = 16;
@@ -212,25 +211,31 @@
             // 
             this.btnExcluir.BackColor = System.Drawing.Color.Red;
             this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcluir.Location = new System.Drawing.Point(495, 281);
+            this.btnExcluir.Location = new System.Drawing.Point(544, 253);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(85, 42);
             this.btnExcluir.TabIndex = 17;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = false;
-            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnAlterar
             // 
             this.btnAlterar.BackColor = System.Drawing.Color.Yellow;
             this.btnAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAlterar.Location = new System.Drawing.Point(388, 281);
+            this.btnAlterar.Location = new System.Drawing.Point(421, 253);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(86, 42);
             this.btnAlterar.TabIndex = 18;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = false;
-            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(-7, 301);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(831, 165);
+            this.dataGridView1.TabIndex = 19;
             // 
             // FrmUsuarios
             // 
@@ -238,6 +243,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnCadastra);
@@ -259,6 +265,7 @@
             this.Controls.Add(this.txtNomeCompleto);
             this.Name = "FrmUsuarios";
             this.Text = "FrmUsuarios";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -285,5 +292,7 @@
         private System.Windows.Forms.Button btnCadastra;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAlterar;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
